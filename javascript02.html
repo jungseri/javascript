@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<script>
+    //데이터타입(자료형)
+        //자바스크립트에서 사용되는 데이터의 유형을 말함
+        //숫자형, 문자열형, 논리형, 배열, 객체형, null, undefined
+
+
+    //변수에 저장 할 수 있는 데이터 타입
+        //숫자형, 문자열형, 논리형, 객체형, 배열(여러개의 값), 객체형 , null, undefined (나머지 두 개는 없나는 것.)(쌍타옴펴나 홑따움펴로 감싸져 있는것.)
+        //숫자형(number): 일반적으로 사용하는 숫자
+        //자바스크립트의 숫자형은 정수와 실수를 구분하지 않음.
+        //정수와 실수를 연산시 실수로 변환하여 연산을 진행함.
+        //숫자형과 문자열형을 연산시 숫자형을 문자열형으로 변환하여 연산
+        //지수 표기법을 사용할 수 있음.
+        //지수 표기법을 사용하지 않을 경우, 최대 15자리까지 표시
+        //최대 소수점 자리수는 17이지만, 100%정확하지 않음.
+        //숫자형 최대값 : 배정밀도 64비트 형식의 크기
+        var x = Number.MAX_VALUE;
+        var y = Number.MIN_VALUE;
+        console.log(x);
+        console.log(y);
+
+
+        var a=3.14; //실수를 저장
+        var b=3; //정수를 저장
+        console.log(a);
+        console.log(b);
+
+        a = 123e5; //12300000
+        b = 123e-5; //0.00123
+        console.log(a);
+        console.log(b);
+
+        a = 999999999999999; //15자리
+        b = 9999999999999999; //16자리
+        console.log(a);
+        console.log(b);
+
+        a= 0.2 +0.1; //화면 출력시 소수점 17자리까지표현
+        console.log(a); //100%정확한 값을 출력하지는 않음.
+
+        b=(0.2 *10 +0.1 * 10) /10;
+        console.log(b);
+
+        //숫자형과 문열의 연산
+        var a = 20;
+        var b = "20";
+        var c = a+b;     // var c = a + b 숫자와 문자를 연산시 숫자형이 자동으로 문자열형으로 변환되어 문자열+문자열 형태로 바뀜
+        console.log(c); //2020이 출력
+
+        a = "10"; //문자열 10
+        b = "20"; //문자열 20
+        c = a + b;//문자열 10 + 문자열 20
+        console.log(c); //1020으로 출력
+
+        c = a - b; //문자열 10 - 문자열20
+        console.log(c); //-10 문자열형의 숫자는 서로 연산이 가능함
+
+        //자바스크립트는 기본적으로 유연한 규칙을 사용하기 때문에 문자열로 만들어진 숫자로 인식함.
+        //다만 +연산자는 문자열 연결 연산자로 먼저 인식되기 때문에 산술 연산이 되지 않음
+
+        a = "100";
+        b = "10";
+        c = a * b;
+        console.log(c); //1000
+
+        c = a / b;
+        console.log(c); //10
+
+        a="10";
+        b="3";
+        c= a % b;
+        console.log(c); //1
+
+    //NAN(Not a Number) : 자바스크립트에서 해당하는 데이터가 숫자인지 아닌지 확인하는 자바스크립트 예약어
+    //isNaN() : 자바스크립트에서 해당하는 데이터를 숫자인지 아닌지 확인하는 함수
+    //true: 숫자가 아님, false가 되면 숫자임.
+/*
+    a = "문자";
+    console.log(isNAN(a)); //변수 a에 저장된 데이터가 숫자가 아님
+    b = 10;
+    console.log(isNAN(b)); //변수 b에 저장된 데이터가 숫자임
+    c="100";
+    console.log(isNAN(c)); //변수 c에 저장된 데이터가 문자열형의 숫자임
+*/
+    // infinity
+    // 자바스크립트에서 출력 가능한 갸장 큰 숫자 이외의 숫자를 계산시 출력하는 값.
+    //isinfinty
+/*
+    var num =2;
+    var text= "";
+
+    while(num!=Infinity){}
+        num = num* num;
+        text=text+num
+    }
+
+console.log(text);*/
+
+//16진수 표시
+//자바스크립트에서 숫자 앞에 0x가 붙어 있을 경우 16진수임
+
+console.log("\n-----문자열타입-----\n")
+        //문자열형 일반적으로 사용하는 문자 혹은 문자열
+        //"" 혹은 '' 로 감싸여진 모든 표현할 수 있는 문자 및 숫자 
+//공백도 문자로 사용됨
+//"로 시작시 "로 끝나야함, '로 시작시 '로 끝나야함
+//""와 ''는 서로 내부에서 활용할 수 있음
+//"" 내부에 ""을 사용 할 수 없음, ''내부에 ''을 사용할 수 없음.
+// ex) " '' "  / ' "" ' <이렇게 넣어야함 
+//문자열과 문자열은 서로 연산(연결을 뜻함)이 가능함.
+var txt="문자열입니다.";
+console.log(txt);
+
+var txt1= "동해물과";
+var txt2= "백두산이";
+var txt3= txt1 + txt2;
+console.log(txt3);
+
+var num = 10;
+var txt = "살 입니다." ;
+var txt3 = num + txt;
+console.log(txt3); // 10살입니다로 출력
+
+var flag = true; //논리형 변수 flag의 값 true
+var txt="문자입니다.";
+var txt3 = flag + txt;
+console.log(txt3);
+
+var txt="avsdasfkjasnfkjwqnkfnwkjnw";
+var length = txt.length;
+console.log("변수 txt의 길이는 :" + length );
+
+
+txt = "가나다라마바사아자차카타파하";
+size = txt.length;
+console.log("변수 txt의 글자 길이는 :" + size); 
+console.log("----------------------------------");
+//문제1) 한글 입숨 사이트에서 2개의 문장을 생성하고 각 문장을 변수 a, b에 각각 대입한 후 각각의 글자의 길이를 출력하고, 변수 a + 변수 b의 값을 변수 c에 대입한 후 변수 c의 길이를 출력하시오.
+
+var a="국가원로자문회의의 의장은 직전대통령이 된다. 다만, 직전대통령이 없을 때에는 대통령이 지명한다. 국회에 제출된 법률안 기타의 의안은 회기중에 의결되지 못한 이유로 폐기되지 아니한다. 다만, 국회의원의 임기가 만료된 때에는 그러하지 아니하다. 선거에 관한 경비는 법률이 정하는 경우를 제외하고는 정당 또는 후보자에게 부담시킬 수 없다.";
+var b="대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다. 언론·출판은 타인의 명예나 권리 또는 공중도덕이나 사회윤리를 침해하여서는 아니된다. 언론·출판이 타인의 명예나 권리를 침해한 때에는 피해자는 이에 대한 피해의 배상을 청구할 수 있다. 국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다.";
+var c= a + b;
+
+var length = a.length;
+var length = b.length;
+var length = c.length;
+console.log("변수 a의 길이는 :" + a.length );
+console.log("변수 b의 길이는 :" + b.length );
+console.log("변수 c의 길이는 :" + c.length );
+
+
+
+//문제 2) 애국가 1절에서 '하느님' 단어의 위치를 찾아서 출력하세요
+var song = "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세. 무궁화 삼천리 화려강산 대한사람, 대한으로 길이 보전하세.";
+var num=song.indexOf("하느님")
+console.log("하느님의 위치는 :"+num);
+
+console.log("----------------------------------");
+//------------------------------
+// 문자열 타입에서 자주 사용하는 함수
+// length : 해당 문자열의 길이를 출력
+//indexof() : 해당 문자열에서 지정한 문자의 위치를 출력
+    // 지정한 문자가 검색되지 않을 경우 -1이 출력됨.
+    //시작을 0에서 부터함
+
+var txt="avsdasfkjasnfkjwqnkfnwkjnw";
+var num=txt.indexOf("g")
+console.log("g의 위치는 :"+num);
+
+
+//lastIndexOf():해당 문자열에서 지정한 문자의 위치를 뒤에서 부터 카운트 하여 출력
+//검색할 문자가 없을 경우 -1 출력
+var index = song.indexOf("대한");
+var lastIndex = song. lastIndexOf("대한");
+console.log("indexOf로 찾은 '대한'의 위치 : " +index);
+console.log("indexOf로 찾은 '대한'의 위치 : " +lastIndex);
+
+//------------------------------
+console.log("----------------------------------");
+//slice(start,end) : 문자열의 일부분을 출력
+//해당 문자열에서 시작 위치에서 끝 위치 까지의 문자열을 출력함.
+//end위치의 문자를 포함하지 않음. 
+
+var str="apple, banana, kiwi";
+var res=str.slice(7,13)
+
+console.log("원본문자열 :" +str);
+console.log("잘라낸문자열:"+res);
+
+
+res = str.slice(-12,-6);
+console.log("음수를 입력하여 잘라낸 문자열:"+res);
+
+res = str.slice(7);
+console.log("값을 1개만 입력하여 잘라낸 문자열 : "+res);
+
+
+console.log("----------------------------------");
+//substring(start, end) : 문자열의 일부분을 출력
+//end위치의 문자를 출력하지 않음
+//음수값을 사용 할 수 없음
+//매개 변수를 1개만 사용시 시작부분에서 문자열 끝까지 출력
+
+var str="apple, banana, kiwi";
+var res= str.substring(7,13);
+console.log("원본문자열 :" +str);
+console.log("substring으로 잘라낸 문자열 : "+res);
+
+res = str.substring(7);
+console.log("substring에서 매개변수를 1개만 사용하여 잘라낸 문자열 :" +res);
+
+console.log("----------------------------------");
+//subst(start, length) : 문자열의 일부분을 출력
+//slice랑 거의 동일함
+//해당 문자열에서 start위치에서 length만큼의 글자를 출력
+//매개 변수를 1개만 사용시 start에서 문자열의 끝까지 출력
+//음수를 사용시 문자열의 끝에서 부터계산ㄴ
+
+var str ="apple, banana, kiwi"
+var res= str.substr(7,6);
+console.log("원본 문자열 :"+str);
+console.log("suvstr로 잘라낸 문자열 :" +res);
+res =  str.substr(7);
+console.log("substr에서 매개변수 1개 사용하여 출력 :" + res);
+res =  str.substr(-4);
+console.log("substr에서 음수를 사용하여 출력 :" + res);
+
+
+
+console.log("----------------------------------");
+
+//replace(원본문자, 변경문자) :지정한 문자열로 변경
+//해당문자열에서 문자를 검색 후 지정한 지정한 문자로 변경
+//문자열의 처음부터 검색하여 발견되는 첫번째 문자를 변경
+
+var str="기초부터 고정형 웹까지";
+var res=str.replace("고정", "반응");
+console.log("원본문자열 : " + str);
+console.log("변경한 문자열 :" +res);
+
+//trim() :문자열로 공백을 제거
+var str="      hello world!!      ";
+var res = str.trim();
+console.log("원본 문자열 :" + str);
+console.log("원본 문자열의 길이 :"+ str.length);
+console.log("trim사용후 문자열 :" + res);
+console.log("trim 사용후 문자열의 길이 :" + res.length);
+
+console.log("----------------------------------");
+
+//split(분할문자) :문자열을 분할하여 배열로 변환
+// 문자열을 지정한 문자를 기준으로 하여 문자열을 잘라서 배열로 변환함.
+
+var txt ="a,b,c,d,e,f";
+var array = txt.split(",");
+console.log("원본 문자열 :" + txt);
+console.log("split 후 배열 0번 index :" + array[0]);
+console.log("split 후 배열 1번 index :" + array[1]);
+console.log("split 후 배열 2번 index :" + array[2]);
+console.log("split 후 배열 3번 index :" + array[3]);
+console.log("split 후 배열 4번 index :" + array[4]);
+console.log("split 후 배열 5번 index :" + array[5]);
+console.log(array)
+//------------------------------
+        //논리형(boolean) : 논리적으로 참(true),거짓(false)을 판단하는 데이터 타입
+        //다른 데이터 타입의 값을 논리형으로 표현하는 방식 
+        //true: 숫자 1이상의 값, 문자열 형에서 데이터가 있는 상태 ("a"라도 있으면 참)
+        //false: 숫자 0이하의 값,문자열 형 "", 혹은  '' null, undefind, NAN
+        //Boolean(값 및 조건식) : 해당 값 혹은 조건식이 참인지, 거짓인지 확인
+        
+        var bool = Boolean(10>5);
+        console.log("10은 5보다 크다 : " + bool);
+
+        var result = 1;
+        console.log("숫자형 1은 논리형으로 :" + boolean(result));
+
+        result = 0;
+
+        console.log("숫자 0은 논리형으로 :" +boolean(result));
+
+        comsole.log("숫자형 실수 0.1은 논리형으로 : " +boolean(result));
+        result=0.1;
+
+        comsole.log("숫자형 실수 0.1은 논리형으로 : " +boolean(result));
+        result=-0.1;
+
+        console.log("문자열형은 논리형으로 :" + boolean(result));
+        result = "";
+
+        comsole.log("숫자형 실수 null은 논리형으로 : " + boolean(result));
+        result=null;
+
+        comsole.log("숫자형 실수 underfoned 은 논리형으로 : " +boolean(result);
+        result=undefined;
+
+        
+        comsole.log("숫자형 실수 nan 은 논리형으로 : " + boolean(result));
+        result=NaN;
+        //배열 : 변수와 형태가 비슷 하지만 하나의 변수명으로 여러개의 데이터를 저장하는  타입(index번호가 존재)
+        //객체형 : 배열과 비슷한 형태로 하나의 변수명으로 여러개의 데이터를 저장하는 타입(key와 value가 존재)
+        //null : 데이터가 존재하지 않는 다는 의미의 데이터 타입
+        //underfined : 데이터가 존재하지 않는다는 의미의 데이터 타입(처음 부터 데이터가 없는 상태))
+
+
+var x=0xFF;
+var y=255;
+console.log(x==y);
+
+//숫자관련함수
+//Number() : 숫자로 변환
+//parseInt() : 정수형 숫자로 변환(첫번째 숫자만 변환)
+//parseFloat() : 실수형 숫자로 변환(첫번째 숫자만 변환)
+
+console.log(Number(true));
+console.log(Number(false));
+console.log(Number("10"));
+console.log(Number("   10"));
+console.log(Number("10   "));
+console.log(Number("10.33"));
+console.log(Number("10,33"));
+console.log(Number("10 33"));
+console.log(Number("문자"));
+
+//-----------------------------------
+
+//숫자로 변환시 해당숫자가 실수일 경우 정수로 변환
+console.log(parseInt("10")); //숫자형 10
+console.log(parseInt("10.23")); //숫자형 정수 10
+console.log(parseInt("10 20 30")); //첫번째 숫자만 변환
+console.log(parseInt("10 years")); //첫번째 숫자만 변환
+console.log(parseInt("years 10")); // 첫번째에 있는 데이터가 문자이기 때문에 변환 실패 ,NAN출력
+
+//-----------------------------------
+
+//숫자로 변환시 해당 숫자가 실수일 경우 실수로 변환함
+//숫자로 변환시 해당 숫자가 정수일 경우 정수로 변환
+
+console.log(parseFloat("10")); //숫자형10
+console.log(parseFloat("10.33")); //숫자형 실수 10.33
+console.log(parseFloat("10 20 30")); //첫번째 숫자만 변환
+console.log(parseFloat("10 years")); //첫번째 숫자만 변환
+console.log(parseFloat("years 10")); //첫번째 데이터가 문자이기 때문에 변환 실패, NAN출력
+
+
+
+
+
+
+
+
+</script>
+
+
+</head>
+<body>
+    
+</body>
+</html>
