@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>자바스크립트 6-1일차</title>
+    <script>
+    
+    //함수 : 특정한 기능을 수해하기 위해서 소스코드를 모아 놓은 것.
+    
+    function funname(val1, val2){ //<<함수의 원형
+        //함수 호출 시 실행될 코드
+    alert(val1, val2);
+    }
+    funname(100,200); 
+    //함수의 원형 모양에 맞게 적어줘야함.
+    
+    //기본형 함수, 함수종류 1번
+    function cleaningStart() {
+    console.log("청소를 시작합니다.");
+    }
+    function cleaningEnd(){
+        console.log("청소를 종료합니다.");
+    }
+    function cleaning(){
+        console.log("청소중입니다.")
+    }
+    cleaningStart();
+    cleaning();
+    cleaningEnd();
+    
+    //함수종류 2번으로 변환(매개변수)
+    function cleaningStart2(a,b) {
+    console.log(a +"와"+ b +"을 사용하여 청소를 시작");
+    }
+    cleaningStart2("청소기","쓰레기통");
+
+    function cleaning2(a,b){ 
+    console.log(a + " 와 " + b +" 를 사용하여 청소하는 중"); 
+    }
+    cleaning2("빗자루","물걸레");
+
+    function cleaningend2(a,b){
+        var a="청소도구1" 
+        var b="청소도구2"
+        return = a , b
+    }
+    var csd = cleaningend2();
+    console.log(csd);
+//프로그램은 크게 나누었을때, 변수(저장소), 함수(실행기)
+//데이터타입(숫자, 문자, 논리, undefined) 
+//배열, 객체
+//제어문(if, else if), 반복문 
+
+//dom 객체 (자바스크립트로 html, css컨트롤 ,제이쿼리)
+//제이쿼리
+//자바스크립트를 쉽게 사용하기 위한 라이브러리
+//제이쿼리 파일을 다운받아 사용
+    $(document).ready(function(){
+        $("#hide").on("click", function(){
+            $("h1").hide();
+        });
+        
+        $("#show").on("click", function(){
+            $("h1").show();
+        });
+    });
+    </script>
+</head>
+<body>
+    <h1>아래 버튼클릭시 숨겨졌다가 보여지는 글자</h1>
+    <button id="hide">클릭시 글자숨겨짐</button>
+    <button id="show">클릭시 글자 보여짐</button>
+</body>
+</html>

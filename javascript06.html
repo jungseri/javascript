@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>자바스크립트 6일차</title>
+<script>
+
+//함수
+//특정한 작업을 수행하도록 설계된 코드블록
+//function이라는 키워드를 사용함
+//*****소스의 재활용이 가능함.*****
+//특정한 작업 부분을 다른 소스들과 분리가 가능함.
+//함수 서언시 함수는 메모리에 등록만 되어 있으며, 실행되지 않음 >> 실행은 해당 함수를 호출 시 실행됨
+//선언된 함수를 호출할 경우에만 함수의 소스 코드가 실행 됨.
+
+//매게변수 : 함수를 실행하기 위해서 반드시 필요한 데이터(인자, 인수)
+//반환값 : 함수가 호출되어 연산이 종료된 후 나온 그 결과값을 함수가 호출된 시점으로 되돌려주는 데이터 
+        //반환값의 키워드로 return이 사용됨
+//사용법
+/*
+function 함수명 (매개변수1, 매개변수2, ...){
+    함수 호출시 실행할 소스코드
+}*/
+
+function add(){
+    var a = 10;
+    var b = 20;
+    console.log(a + b);
+}
+
+function sub() {
+    var a =10;
+    var b = 5;
+    console.log(a-b);
+}
+function multi() {
+    var a = 10;
+    var b = 20;
+    console.log(a*b);
+}
+
+function div() {
+    var a= 10;
+    var b= 20;
+    console.log(a/b);
+}
+//함수를 선언했지만 함수를 호출 하지 않았기 때문에 안뜸
+//현재 함수 4개는 메모리에 등록만 되어 있음.
+
+
+function add1(a,b){
+    console.log(a + b);
+}
+//add1(); 함수의 원형에 매게 변수가 있으나 함수 호출시 매개 변수를 입력하지 않아서 오류가 발생함. 값까지 설정해줘야 정상적으로 실행이 된다.
+add1(10,20);
+
+//-----------함수 호출-----------
+console.log("------------함수호출-------------")
+add(); //함수호출
+sub();
+multi();
+div();
+//함수는 변수와 달리 사용시 함수명 뒤에 반드시 ()가 붙음
+// 함수의 원형에 매개변수가 있을 경우 반드시 매개 변수도 같이 사용해야 함수가 실행됨.
+
+//명령어 세트를 미리 생성
+/*사용자 생성 함수 
+자바스크립트 함수 2가지
+내장함수랑 사용자 함수가 있음
+내장함수는 개발자가 자바스크립트 만든 사람이 쉽게 쓰라고 미리 만들어 놓은거 (이건 우리가 못고침.)
+내장함수의 예 ) console.log(); 
+명령어 세트를 미리 생성
+필요시, 호출해서 사용.
+- 함수 원형  function funcname(매개변수)
+- 함수의 호출 사용자의 필요에 의해서 함수를 실행하는 것
+
+이 함수가 작동하기 위해서 반드시 필요한 데이터 : 매개변수
+반환값
+*/
+
+//함수의 형태 4가지
+//1.매개변수와 반환값이 모두 없는 함수
+    // 출력값이 늘 동일함, 연산을 위한 변수가 모두 해당 함수 내에서 선언되고 사용됨.
+
+/*사용법 선언
+function aaa() {
+    실행될 코드;
+    결과값 출력;
+}*/
+
+//2.메개변수는 존재하고, 반환값이 없는 함수.
+    //매개변수로 인하여 출력값이 변동됨, 연산을 위한 변수값을 외부에서 받아옴
+
+/*사용법 선언
+function bbb(a, b, c) {
+    a=10, b:=5, c=3x
+    실행될 코드;
+    결과값출력;
+}*/
+
+//3.매개 변수는 없고, 반환값이 존재하는 함수.
+    //출력값이 늘 동일함 연산을 위한 변수가 모두 해당 함수내에서 선언되고 사용됨. 결과값을 외부로 되돌려 주어서 해당 결과값을 다른곳에서 활용할 수 있음.
+
+/*사용법 선언
+function ccc(){
+    실행할 코드...;
+    return 결과값 출력;
+}
+*/
+
+//4.매개변수와 반환값이 모두 존재하는 함수
+    //매개변수로 인하여 출력값이 변동되고, 결과값을 외부로 돌려주어 해당 다른 곳에서 활용할 수 있음.
+
+/*사용법선언
+function ddd(a, 3){
+    실행할 코드 ... function
+    return 결과값 출력;
+    }*/
+
+//1번방식으로 만든 함수
+function multi1(){
+    var a = 10;
+    var b = 20;
+console.log(a * b);//반환값 : 보고
+}
+
+//2번방식으로 만든 함수
+//함수 내부에 var a =10, var b =20을 선언한 것과 동일한 효과를 가지고 있음.
+//해당 함수를 실행시 매개변수의 값을 변경하면 결과값도 달라지게됨.
+function multi2(a, b){ 
+    console.log(a*b); 
+}
+
+//3번방식으로 만든 함수
+//해당함수의 결과값을 함수를 호출한 시점으로 반환함.
+//해당함수를 실행후 그 결과값을 다른곳에서 사용하기 위해서 사용
+function multi3(){ 
+    var a = 10;
+    var b = 20;
+    return a * b;//결과값을 함수 호출 시점으로 반환
+}
+//4번방식으로 만든 함수
+//매개변수를 통해서 데이터를 매번 다르게 입력받아 연산결과를 다르게 출력하고 그 결과를 해당 함수를 호출한 시점으로 반환하여 그 결과값을 다른 소스에서 사용하도록 함
+function multi4(a,b){
+    return a * b;
+}
+
+console.log("----1번방식으로 만든 함수실행----")
+multi1();
+
+
+console.log("----2번방식으로 만든 함수실행----")
+multi2(10,20);
+
+
+console.log("----3번방식으로 만든 함수실행----")
+var result = multi3();
+console.log(result);
+
+
+console.log("----4번방식으로 만든 함수실행----")
+result = multi4(10,20);
+console.log(result);
+
+
+//변수 : 메모리에 살아있는 범위(데이터 저장공간)
+//전역변수 : 프로그램 전체에서 접근가능(프로그램 종류시 까지 살아있음)
+//지역변수 : 특정 코드블럭 내에서 선언되어지고 사용되는 변수(해당 코드블럭 이외에서는 접근 불가능)
+
+//for안에 중괄호 안에있는 변수가 지역변수인데 for함수가 끝나면 사용 할 수 없음
+
+console.log("----------------------------------------------------------------------")
+//문제1) 사칙연산 (+,-,*,/)을 매개변수와 변환값이 없는 형태로 함수를 생성하고 호출하여 화면에 출력하세요.
+function multi11(){
+    var a = 10;
+    var b = 5;
+    console.log(a/b);
+}
+console.log("----q1번방식으로 만든 함수실행----")
+multi11();
+
+//문제2) 사칙연산을 매개변수는 존재하고, 반환값이 없는 형태로 함수를 생성하고 호출하여 화면에 출력하세요.
+function multi22(a,b){
+    console.log(a/b);
+}
+console.log("----q2번방식으로 만든 함수실행----")
+multi22(20,10);
+
+//문제3) 사칙연산을 매개변수는 없고, 반환값이 존재하여,해당 변환값을 받아서 화면에 출력하세요.
+
+function multi33(){
+    var a= 50;
+    var b= 25;
+    var c= a/b;
+    return c;
+}
+
+console.log("----q3번방식으로 만든 함수실행----")
+var result = multi33();
+console.log(result); 
+console.log(multi33()); //multi33 함수 실행후 되돌아오는 데이터를 화면에 바로 출력 위와 같은 출력값.
+//다른 변수에 반환값이 저장되지 않았으므로 1회용.
+
+//문제4) 사칙연산을 매개변수와 반환값이 모두 존재하는 형태로 함수를 생성하고 호출하여 화면에 출력하세요.
+function multi44(a,b){
+    return a/b;
+}
+console.log("----q4번방식으로 만든 함수실행----")
+result = multi44(60,30);//매개변수를 통해서 데이터 값을 입력하고, multi44 함수 내에서 연산 후 그 결과값을 다시 result 변수에 반환함.
+console.log(result);//결과값을 다른 소스에서 활용하지 않을 경우 1회용으로 바로 사용해도 됨.
+
+
+//변수 메모리에 살아있는 범위
+console.log("-------------문제5--------------")
+/*문제5) 사용자 입력 통해서 점수를 입력받고, 해당 점수의 등급을 출력하는 프로그램을 작성하세요
+각각의 등급을 구분하는 소스부분을 함수로생성.
+각각의 등급은 5점씩 나누어서 A+, A, B+, B, C+, C, D+, D, F로 출력
+100~96, 95~90, 89~86, 86~80, 79~76, 75~70, 69~66, 65~60, 60미만*/
+
+function selectscore(score){
+if(score<=100 && score>=90){
+    if(score<=100 && score>=95){
+    console.log("A+");
+    level = "A+";
+    }
+    else{
+    console.log("A");
+    level = "A";
+    }
+}
+else if(score<=89 && score>=80){
+    if(score<=89 && score>=85){
+        console.log("B+");
+        level = "B+";
+    }
+    else{
+        console.log("B");
+        level = "B";
+    }
+}
+else if(score<=79 && score>=70){
+    if(score<=79 && score>=75){
+        console.log("C+");
+        level = "C+";
+    }
+    else{
+        console.log("C");
+        level = "C";
+    }
+}
+
+else if(score<=70 && score>=0
+){    
+    console.log("F");
+    level = "F";
+}
+
+
+if(score<=100 && score>=0){
+    alert("입력하신 당신의 점수는 " + score + " 이며, 등급은 " + level + " 입니다.");
+}
+else if(score<=0){
+    alert("잘못 입력하셨습니다.");
+}
+else if(score>101){
+    alert("잘못 입력하셨습니다.");
+}
+else{
+    alert("잘못 입력하셨습니다.");
+}
+ 
+}
+
+var score= prompt("점수를 입력하세요"); //내장함수
+score = Number(score);
+selectscore(score);
+
+console.log("-------------문제6--------------")
+//문제6) 사용자 입력을 통해서 원하는 단수의 구구단을 출력하는 프로그램을 작성하세요 
+//구구단 출력부분과 사용자 입력을 받는 부분을 따로따로 함수로 생성해야함
+//추가 : 화면 출력 부분을 함수로 따로 생성하여 출력
+
+
+
+function inputgugu(){ //사용자 입력함수
+    var dan = prompt("출력할 구구단을 입력하세요"); //내장함수
+    dan = Number(dan);}
+
+function outputgugu(dan){ //사용자 출력함수 아웃풋 구구는 단 하나만 매개변수로 가지고 있는 함수가 되었음. 
+    for(var i =0; i<10; i++){      
+    console.log(dan + "x" + i + "=" +dan*i);
+    }
+}
+
+
+var dan = inputgugu(); //사용자가 입력한 구구단의 단수를 저장할 변수
+
+outputgugu(dan);
+
+console.log("-------------------------------------------")
+//문제7) 화면 출력 함수를 생성하여 사용자가 입력한 숫자만큼 화면에 '안녕하세요 (카운트)'를 출력하는 프로그램을 작성하세요
+//카운트는 1부터 시작
+
+function print(count){
+    for(var i =0; i <= count; i++){ 
+    console.log("안녕하세요 ("+ i +")" );
+    }
+}
+    var num = prompt("인사할 횟수입력");
+    num = Number(num);
+
+    print(num);
+    
+//문제 8)  랜덤숫자를 사용하여 임의의 숫자 6개를 받아서 배열에 입력하고, 화면에 출력하는 프로그램을 작성하세요.
+
+var rnd = Math.floor(Math.random( ) * 3) + 1;
+/*
+var lotto1 = [];
+    for(var i = 0; i<6; i++){
+    var rnd = Math.floor(Math.random() * 45) +1;
+    lotto1.push(rnd);}
+
+
+    for(var i =0; i < lotto1.lenth; i++){
+    if(i == lotto1.length -1){
+        console.log("보너스 로또 숫자 :" + lotto1[i]);
+    }
+    else{
+    console.log((i+1)+"번째 로또 숫자 : " + lotto1[i]);
+}*/
+console.log("-------------------------------------------")
+/*
+
+//문제9) 문제 8번 함수를 사용하여 표현하세요.
+var rnd = Math.floor(Math.random( ) * 3) + 1;
+
+function createLotto(){
+    for(var i = 0; i<6; i++){
+    var rnd = Math.floor(Math.random() * 45) +1;
+    lotto2.push(rnd);}
+ 
+}
+function printlotto() {
+    for(var i =0; i < lotto2.lenth; i++){
+    if(i == lotto2.length -1){
+        console.log("보너스 로또 숫자 :" + lotto2[i]);
+    }
+    else{
+    console.log((i+1)+"번째 로또 숫자 : " + lotto2[i]);}
+}
+}
+var lotto2=[]; //전역 변수는, 전역변수는 프로그램 전체에서 접근이 가능함.
+createLotto();
+printlotto();
+
+
+
+
+//문제10) 문제 9번을 이용해서 이번주 당첨번호를 생성하고, 생성시 중복번호가 발생할 수 있다. 여기서 중복번호를 제거하는 프로그램을 작성하세요.
+//실제로 기존의 배열에 저장된 숫자와 새로 생된 숫자가 같은지 확인하는 함수 
+var rnd = Math.floor(Math.random( ) * 3) + 1;
+
+function createLotto3(rnd){
+    for(var i = 0; i<6; i++){
+    var rnd = Math.floor(Math.random() * 45) +1;
+    lotto2.push(rnd);}
+ 
+}
+function printlotto() {
+    for(var i =0; i < lotto2.lenth; i++){
+    if(i == lotto2.length -1){
+        console.log("보너스 로또 숫자 :" + lotto2[i]);
+    }
+    else{
+    console.log((i+1)+"번째 로또 숫자 : " + lotto2[i]);}
+}
+}
+var lotto2=[]; //전역 변수는, 전역변수는 프로그램 전체에서 접근이 가능함.
+createLotto();
+printlotto();
+
+//문제11 사용자 입력을 숫자로 받아서 그 숫자가 짝수인지 홀수 인지 확인하여 화면에 출력하는 프로그램을 작성하세요
+//함수사용(사용자 입력, 연산부분)
+var ddd = prompt("출력할 1~10까지 숫자를 입력하세요");
+    ddd = Number(ddd);
+
+function aaa(){
+    if(ddd = 2,4,6,8,10){
+        console.log("입력하신 숫자는"+ ddd +"짝수입니다.");
+     
+    }
+    else if(ddd = 1,3,5,7,9){
+        console.log("입력하신 숫자는"+ ddd + "홀수입니다.");
+     
+    }
+    else{
+        console.log("입력하신 숫자는"+ ddd + "잘못된입력입니다.");
+    }
+    }
+aaa();
+*/
+console.log("--------------문제 11--------------")
+function inputNumber(){
+    var num = prompt("숫자를 입력하세요 : ");
+    num = Number(num);
+    return num;
+}
+
+function checkNumber(num){
+    if(num % 2 == 1 ){
+outputNumber(num, "홀수")
+}
+    else{
+    outputNumber(num,"짝수");
+}
+
+function outputNumber(number, text){
+    console.log(number + "은" + text + "입니다.");
+}
+}
+var number = inputNumber();
+checkNumber(number);
+//사용자 입력
+
+
+
+
+
+
+//사용자의 입력을 통해서 가위, 바위, 보를 입력하여 컴퓨터와 가위(1), 바위(2), 보(3) 게임을 하는 프로그램을 작성하세요
+//함수사용
+/*var hi = prompt("가위,");
+
+
+var rnd = Math.floor(Math.random( ) * 3) + 1;
+
+var nuum = prompt("인사할 횟수입력");
+   
+
+function nuum(random){
+    if(nuum = 1){
+    alert("컴퓨터도 1을 냈습니다. 무승부입니다.");
+    console.log("컴퓨터 1 vs 사용자 " + num)
+}
+    else if(number>1)
+    alert("컴퓨터도 1을 냈습니다. 무승부입니다.");
+    console.log("컴퓨터 1 vs 사용자 " + num)
+    }
+
+}
+
+if(numbers=2){
+    else if(number>2)
+    }
+
+}
+if(numbers=3){
+    else if(number<3)
+
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+function print(){
+    console.log(dan + "x" + i + "=" +dan*i)
+}
+function gugu1(){
+        var a = 5;
+        var b = 1;
+        console.log(a * b);}  
+gugu1();
+
+
+function gugu2(){
+        var a = 5;
+        var b = 2;
+        console.log(a * b);}  
+gugu2();
+
+function gugu3(){
+        var a = 5;
+        var b = 3;
+        console.log(a * b);}  
+gugu3();
+
+function gugu4(){
+        var a = 5;
+        var b = 4;
+        console.log(a * b);}  
+gugu4();
+
+function gugu5(){
+        var a = 5;
+        var b = 5;
+        console.log(a * b);}  
+gugu5();
+
+
+function gugu6(){
+        var a = 5;
+        var b = 6;
+        console.log(a * b);}  
+gugu6();
+
+function gugu7(){
+        var a = 5;
+        var b = 7;
+        console.log(a * b);}  
+gugu7();
+
+
+function gugu8(){
+        var a = 5;
+        var b = 8;
+        console.log(a * b);}  
+gugu8();
+
+function gugu9(){
+        var a = 5;
+        var b = 9;
+        console.log(a * b);}  
+gugu9();
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>
