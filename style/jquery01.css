@@ -1,0 +1,77 @@
+.div02box {
+    padding: 5px;
+    text-align: center;
+    background-color: cornflowerblue;
+    border: 1px solid white;
+    color:white;
+}
+
+#div02panel1{
+    padding: 50px;
+   
+}
+#div02panel2{
+    padding: 50px;
+   
+}
+#div02panel3{
+    padding: 50px;
+    position: relative;
+}
+
+#div03, #div03-1{
+    position: relative;
+    margin-bottom: 500px;
+}
+#div03div {
+    background-color: teal;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    
+}
+#div03-1div {
+    background-color:yellowgreen;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    /*부모태그의 시작위치를 자식태그가 그 위치로감.*/
+    
+}
+
+.div04box {
+padding: 5px;
+font-size: 20px;
+text-align: center;
+background-color: tomato;
+color: white;
+border: 1px solid white;
+border-radius: 5px;
+position: relative;
+}
+
+#div04panel{
+    padding: 50px;
+    display: none;
+}
+
+#div04div1, #div04div3{
+    width: 200px;
+    height: 100px;
+    color:white;
+    font-size: 20px;
+    text-align: center;   
+    background-color: blueviolet;
+    position: relative;
+    }
+
+#div04div2{
+    width: 200px;
+    height: 100px;
+    color:white;
+    font-size: 20px;
+    text-align: center; 
+    background-color: burlywood;
+    position: relative;
+ 
+}

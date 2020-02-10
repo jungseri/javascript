@@ -34,13 +34,14 @@ window.onload=function
     var btnLoadEvent = document.querySelector("$btn01");
 btn.Load
 
-window.addEventListener("load",function{()})
+window.addEventListener("load",function(){
     var btnLoadEvent = document.querySelector("$btn01");
+}
 btn.Load
 //2-2 domcontentloaded 사용<< 추천
 // domcontentloaded 사용시 body 태그의 html 태그가 모두 로딩된 이후 자바스크립트 코드가 실행함.
-// on load이벤트보다 동자기점이 더 빠름.
-
+// on load이벤트보다 동작시점이 더 빠름.
+//IE이하 버전에서 동작되지 않음. 
 window.onload=function
     var btnLoadEvent = document.querySelector("$btn01");
 btn.Load
@@ -49,6 +50,15 @@ window.addeventListener("DOMContentLoaded", functionx   )
     var btnLoadEvent = document.querySelector("$btn01");
 btn.Load
 
+//3 jqueru의 ready 함수를 사용
+//자바스크립트의 DOMContentLoaded와 같이 html 태그의 로드가 완료시 자바스크립트가 동장됨 단점은 ready함수를 사용하기 위해서는 제이 쿼리 를 로드해서 사용해야함
+
+$(document).redady(function)
+{
+    $("#btn01").on("moseout", function)(){
+        alert("클릭");
+    };
+});
 
 
     </script>

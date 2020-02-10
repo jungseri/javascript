@@ -14,7 +14,7 @@
     <!--설치-->
     <!--1. jquery파일 다운로드 방식-->
     <!--비 압축 개발 jQuery 3.4.1 다운로드 -다른이름으로 링크저장- 작업중인 폴더에 폴더를 만들어서 저장해서 링크로 가져오기-->
-    <!--<script src="./js/jquery-3.4.1.js"</script>-->
+    <!--<script src="./js/jquery-3.4.1.js"></script>-->
     <!--2. 외부 서버에서 jquery 파일을 로드 | 구글 CDN 들어가서 | jQuery
 3.x 스 니펫 : 주소 그대로 복사 (이렇게 가져와도 되는데 다운 받는게 더 속도가 빠름)-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 둘중 하나만 쓰면됨.
@@ -43,7 +43,7 @@ $(document).ready(function(){
         });
 
         $("#btn02").on("mouseenter", function(){
-            alert("버튼2에 마운스 포인터 나감")
+            alert("버튼2에 마운스 포인터 나감");
         });
         
         $("#btn03").click("click",function(){
@@ -61,10 +61,11 @@ $(document).ready(function(){
                 });
             });
         $("#btn06").on("click",function(){
-        $("#div01").off("click");})
-
+            $("#div01").off("click");})
+        });
 
 console.log("==============================================")
+$(document).ready(function(){
     $("#div02-btn1").on("click",function(){
         $("#div02-1").fadeIn();
         $("#div02-2").fadeIn("slow");
