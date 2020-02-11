@@ -1,0 +1,16 @@
+table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 100%;
+}
+
+td, th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}/*색 다르게주고싶을때 쓰는 태그*/

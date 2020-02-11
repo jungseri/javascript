@@ -1,10 +1,25 @@
-#div01Div1{
-    height: 100px;
-    width: 300px;
-    padding: 10px;
-    margin: 5px;
-    border: 5px solid blue;
-    background-color: turquoise;
-    color:white;
+#body *{
+    
 }
+#div01Div1{
+    height: 200px;
+    width: 400px;
+    padding: 10px;
+    margin: 20px;
+    border: 5px dashed blue;
+    background-color: turquoise;
+}
+#div02 > div, #div03 > div, #div04 > div, #div05 > div, #div06 >div, 
+#div07 >div, #div08 >div, #div09 >div, #div10 >div, #div11>div , #div12>div, #div13>div{width: 500px;}
+
+#div02 *, #div03 *, #div04 *, #div05 *, 
+#div06 *, #div07 *,  #div08 *, #div09 *, #div10 *, #div11 *, #div12 *, #div13 * {
+    display: block;
+    border: 3px solid gray;
+    color: gray;
+    padding: 10px;
+    margin: 20px;
+}
+
+
 
