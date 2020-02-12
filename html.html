@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       /*
+    for(var i=1; i<10; i++){
+    if(i : even){
+
+    console.log(i);
+    }
+    else{       
+    }
+}
+
+    */   
+for(var i=1; i<10; i++){
+    if(i%2 == 0){
+
+    console.log(i);
+    }
+    else{       
+    }
+}
+console.log("------------------------------------------------");
+
+var i = ["반복문 :", "정해진", "수만큼", "자동반복"];
+    console.log(i[0]);
+    console.log(i[1]);
+    console.log(i[2]);
+    console.log(i[3]);
+    console.log("------------------------------------------------");
+var a = ["반","복","문","정","해","진","수","만","큼","자","동","반","복"];
+
+for(var v = 0; v <= a.length; v++){       
+    console.log(a[v]);
+}
+
+console.log("------------------------------------------------");
+var result=0;
+for(var g=0; g <= 10; g++){
+    var result = g + result;
+    console.log(result);
+}
+console.log("------------------------------------------------");
+var s_1 ="**********";
+var result ="";//외부저장 장소 생성하기 위해서
+for(var v=0; v<=8 ;v++){
+    s_1=s_1.slice(0,-1); //문자열 함수 하나씩 뺴는거 , end도 써도 됨. 
+    console.log(s_1);
+}
+console.log("------------------------------------------------");
+//선생님 답안지
+var result3 ="*****";
+for(var v = 4; v > 0 /*입력했던값*/ ;v--){ /*문자열연산자는 +하나밖에 없음*/
+    result3 = result3.substr(0,v) /*i만큼 빼줌*/
+    console.log(result3);
+}
+console.log("------------------------------------------------");
+/*사용자 입력으로 숫자받기 입력받은 수만큼 *을 출력*/
+
+var s ="*";
+var result ="";
+for(var v=0;v<=10;v++){
+    var result = s + result
+    console.log(result);
+}
+console.log("------------------------------------------------");
+//선생님 답안지
+var result2 ="";
+for(var v=0;v<=10;v++){
+    result2 = result2 +"*"
+    console.log(result2);
+}
+
+console.log("------------------게시판-----------------------");
+/*
+for(var i =0 ; i <5  ; i++){
+    var txt = "<tr><td>" + num[i] + "<td><tr>"
+        console.log(txt);
+}*/
+
+console.log("------2중 for문 2단~9단까지 ---------------------");
+
+for(var j=9; j>1 ; j--){
+    console.log("-----" + j + "단"+ "-----");
+    for(var i=1; i<10 ;i++){     
+        console.log(j + "x" + i + "=" + j*i);
+    }      
+}
+/* 결과값을 배열로 출력하기
+var result1_1 =[];
+for(var j=9; j>1 ; j--){
+    console.log("-----" + j + "단"+ "-----");
+    for(var i=1; i<10 ;i++){     
+        console.log(j + "x" + i + "=" + j*i);
+    }      
+}*/
+console.log("------------01234543210출력 가로로 할거면 문자열이나 배열-------------------");
+
+for(var i=0; i<6 ; i++){           
+      if(i==5){
+        for(var j=5; j>=0 ;j--){              
+        console.log(j);        
+        }
+    }
+      else{
+        console.log(i);
+      }    
+    }      
+    console.log("------------01234543210출력 가로로 할거면 문자열이나 배열안에 배열------------------");
+/*
+    var r =[];
+    var R =[];    
+
+for(var i=0; i<6 ; i++){             
+      if(i==6){          
+        for(var j=6; j>=0 ;j--){      
+        console.log(j);      
+        }
+    }
+      else{
+        i.push
+        console.log(i);
+      }   
+    r=[i];
+    R=[r];   
+    }      
+*/
+// 배------------열
+console.log("배-------------------------------------열");
+var i = ["배열","하나의","변수명으로","여러개의","데이터를","저장하는","자료구조"];
+console.log(i[0]);     
+console.log(i[2]);     
+console.log(i[3]);     
+console.log(i[4]);   
+console.log(i[5]); 
+console.log(i[6]);   
+
+var r = ["역사를", "소담스러운", "있음으로써", "이 우리", "이것이다.", "못할 끓는", "온갖", "청춘의 구하지", "풀밭에", "봄바람이다."]
+  
+console.log(r[9]);   
+console.log(r[8]);  
+console.log(r[7]);   
+console.log(r[6]);   
+console.log(r[5]);   
+console.log(r[4]);   
+console.log(r[3]);   
+console.log(r[2]);   
+console.log(r[1]);  
+console.log(r[0]);    
+
+var r_1 = ["역사를", "소담스러운", "있음으로써", "이 우리", 
+"이것이다.", "못할 끓는", "온갖", "청춘의 구하지", "풀밭에", "봄바람이다."] ;
+console.log("배-------------------------------------열");
+for(var i = 0 ; i<10 ; i++){
+    console.log(r_1[i]);
+}
+
+/*
+1-25하나의 이름으로 여러개
+for,배열은 궁합이 잘 맞음.
+대신 여러번 작업
+데이터 여러개 들어가있는것
+*/
+
+//이중배열
+var array =[];
+var ar1 =[1,2,3,4,5];
+var ar2 =[6,7,8,9,10];
+var ar3 =[6,7,8,9,10];
+var ar4 =[6,7,8,9,10];
+
+console.log(array);
+array[0]=ar1;
+console.log(array);
+array[1]=ar2;
+array.push(ar3);
+console.log(array);
+array.unshift(ar4);
+console.log(array);
+for(var i=0; i<array.length ; i++){   
+    console.log("배열 array의" +i+"번 index의 배열길이 :" + array[i].length);
+}
+
+//배열 array의 모든 요소에 접근하기
+var array=[];
+for(var i=0; i<array.length; i++){
+   
+        console.log("배열 array[" + i + "] 의 값" + array[i]);
+    }
+
+
+for(var i=0; i<array.length; i++){
+    for(var j=0; j<array[i].length; j++){
+        console.log("배열 array[" + i +"] [" + j + "] 의 값" + array[i][j]);
+    }
+}
+$(document).ready(function(){
+    var stars=[
+        [1,2,3,4,5,6,]
+        [5,6,7,8,9,10]
+        [44,45,46.78,9]
+        ]
+        var tableText:"";
+        for(var i = 0; i<);
+
+        $("#btn1").on
+
+// 배열하고 object들어가는거 보여줌
+// for을 이용해서표 만들기.       
+/*
+    var r =[];
+    var R =[];    
+
+
+    for(var i=0; i<6; i++){
+    for(var j=6; j>=0; j--){
+        console.log("배열 [" + i +"] [" + j + "] 의 값" + array[i][j]);
+    }
+}
+for(var i=0; i<6 ; i++){             
+      if(i==6){          
+        for(var j=6; j>=0 ;j--){   
+           r=[r[i]];
+        console.log(r);      
+        }
+    }
+      else{
+        i.push
+        console.log(i);
+      }   
+    r=[i];
+    R=[r];   
+    }      
+*/
+</script>
+<style>
+    td, th{
+    border: 1px solid black;
+}
+   
+</style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>순번</th>
+                <th>이름</th>
+                <th>직업</th>
+                <th>성별</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+                <td>.</td>
+            </tr>
+            <tr>
+                <td>..</td>
+                <td>..</td>
+                <td>..</td>
+                <td>..</td>
+            </tr>
+            <tr>
+                <td>ll</td>
+                <td>ll</td>
+                <td>ll</td>
+                <td>ll</td>
+            </tr>
+            <tr>
+                <td>l.</td>
+                <td>l.</td>
+                <td>l.</td>
+                <td>l.</td>
+            </tr>
+        </tbody>
+    </table>
+    <table id = table2>
+        <thead>
+            <tr>
+                <th></th>
+            </tr>
+        </thead>
+        
+    </table>
+    <button id = "brn">클릭시 테이블 내용 추가</button>
+</body>
+</html>
