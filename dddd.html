@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       "use strict"
+
+        //1번 매개 없고 반환없음
+function manu(){
+    var ss = { s1 : "가나다", s2 : "라마바", s3 : "아자차"};
+            for(var x in ss){
+            console.log(ss[x]);        
+    }
+}
+manu();
+
+//2번 매개는 있고 반환이없음
+
+    function car(name1,color1,size1,type1,cc1,price1){  
+        var car={name : "말리부", color : "black" ,
+         size : "중형", type : "세단", cc: "2000", price : "3000"}
+             car.name/*객체key*/=name1/*매개변수*/;
+             car.color=color1;
+             car.size=size1;
+             car.type=type1;
+             car.cc=cc1;
+             car.price=price1;
+             console.log(car);
+}
+car("k5","화이트","중형","중형차","모름","1500");
+
+//1~10합내는거 함수로
+var result =0
+function number(){
+    for(var i=0; i<11;i++){
+        result=i+result               
+            console.log(result)
+        }
+    }
+number();
+
+//구구단 출력 함수로
+var result =0
+function dan99(){
+    for(var i=1; i<10; i++){
+        console.log(i+"단");
+            for(var j=1; j<10; j++){
+                result=i*j
+                console.log(i+"x"+j+"=" + result);
+            }
+        }
+    }
+dan99();
+//점수 입력시 학점 출력
+/*
+
+function score(){    
+    var score = prompt("점수를 입력하세요: ");
+    score = Number(score); 
+        if(score<=100 && score>=90){
+            console.log("A"); 
+        }
+        else if (score<=89 && score>=80){
+            console.log("B");    
+        }
+        else if(score<=79 && score>=70){
+            console.log("C");
+        }
+        else if(score<=69 && score>=60){
+            console.log("D"); 
+        }
+        else{console.log("F")}   
+}
+score();
+
+//사용자 입력시 지정한 단수
+var result =0
+function dan999(){
+    var dan999 = prompt("원하는 구구단 단을 입력하세요: ");
+    dan999 = Number(dan999); 
+    for(var i= dan999; i<10; i++){
+        console.log(i+"단");
+            for(var j=1; j<10; j++){
+                result=i*j
+                console.log(i+"x"+j+"=" + result);
+            }
+            break;}
+    }
+dan999();*/
+
+// 매개변수를 두개 받음 작은 숫자 부터 큰 숫자 까지의 합을 구함????????????????????????????????
+
+function add(a,b){
+    var result =0//result=0; 외부 저장소가 하나가 필요하다
+        for(var i = a; i<= b; i++){//for문이 돕니다~
+        result = result + i  ;           
+        }
+        console.log(result); 
+    }
+add(5,10);
+
+//매개변수 있고 반환값 없는 x에서 부터 y까지의 수의 합 1~10까지의 합문제와 동일한 문제 
+// x에서 부터 y니까 변수 x와 y가 있음.
+//개발커뮤니티요?? 다른사람질문해놓은거 풀어보기
+
+/*
+//사용자 입력 받아서 /함수 : 매개변수 구구단 출력
+function ggdan(a,b){
+    var a = prompt("a를 입력하세요: ");
+        a = Number(a);        
+    for(var i = a ; i < 10 ; i++){
+        console.log(i + "단")        
+        for(var j = 1 ; j < 10 ; j++){   
+            console.log(i + "x" + j + "=" + i*j)             
+        }
+        break;}
+}
+ggdan();
+*/
+
+function myscore(a,b){  
+   
+        var level;
+        if(a >= 90 && a < 101){
+            level="A";
+        }
+        else if(a >= 80 && a <90){
+            level="B";
+        }
+        else if(a >= 70 && a <80){
+            level="C";
+        }
+        else if(a >= 60 && a <70){
+            level="D";
+        }
+        else{
+            level="F";
+        }
+    console.log("점수"+ a+"는"+level+"입니다.")
+}
+myscore(55);
+
+//사용자 입력 구구단 단수 입력받고 계산 함수 2번 함수 형식 화면 출력 화면 따로 
+function ggdan2(a){
+    for(var i = 1; i<=9 ; i++){
+        var result = a*i
+    console.log(result)       
+    }
+}
+ggdan2(2);
+
+
+/*
+전역변수(프로그램 전 영역에서 접근이 가능한 변수
+        프로그램(현재페이지 내에서) 종료 전까지 메모리에 존재.)
+<script> 내에서 var 같은거
+    최대한 전역변수는 사용하지말라.??? 필요할땐 써야하는데
+    메모리 누수가 일어날 수 있음.
+    JAVA는 전역 변수가 없음. 기본적으로 지역 변수만 있음. 
+
+지역변수(특정 코드블럭내에서 선언되고 사용되고 삭제되는 변수 )
+{중괄호 안에서 var을 선언한 것들}*/ 
+
+
+//점수를 3개 입력 받아서, 평균값을 구하고 그 값을 반환하는 함수// 출력은 함수 밖에서 해야함 or 바로 출력
+console.log("---------3번---------------")
+function ad(){
+    var a =30
+    var b =30
+    var c =60
+    var result = (a+b+c)/3
+    return result;
+}
+console.log(ad());
+
+console.log("---------4번---------------")
+function ad2(a,b,c){   
+    var result = (a+b+c)/3
+    return result;
+}
+console.log(ad2(10,20,30));
+//점수입력(매개변수), 등급 출력(반환받아서 출력)
+function ddd(a,b){
+    if(a<101 && a>89){
+        b= "A"
+    }
+    else if(a<90 && a>79){
+        b= "c"
+    }
+    else if(a<80 && a>69){
+        b="D"
+    }
+    else{
+        b="F"
+    }
+  
+   
+    return "점수" + a + "등급" + b;
+}
+console.log(ddd(55));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

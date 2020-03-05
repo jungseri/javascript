@@ -112,13 +112,13 @@ for(var i=0; i<6 ; i++){
     }      
     console.log("------------01234543210출력 가로로 할거면 문자열이나 배열안에 배열------------------");
 /*
-    var r =[];
+    var r =[i];
     var R =[];    
 
 for(var i=0; i<6 ; i++){             
       if(i==6){          
         for(var j=6; j>=0 ;j--){      
-        console.log(j);      
+        console.log(r[j]);      
         }
     }
       else{
@@ -185,6 +185,23 @@ for(var i=0; i<array.length ; i++){
     console.log("배열 array의" +i+"번 index의 배열길이 :" + array[i].length);
 }
 
+
+/*
+console.log("--------------------------------------")
+//01234543210배열을 for문으로 만들기
+/*var array =[1,2];
+var i=[];
+
+var arr = new Array(1,2,3,4);
+
+for(var i=0; i<6; i--){
+    array.push(i);
+ console.log(arr);
+}
+
+console.log("--------------------------------------")
+
+
 //배열 array의 모든 요소에 접근하기
 var array=[];
 for(var i=0; i<array.length; i++){
@@ -198,8 +215,10 @@ for(var i=0; i<array.length; i++){
         console.log("배열 array[" + i +"] [" + j + "] 의 값" + array[i][j]);
     }
 }
+*/
+/* 
 $(document).ready(function(){
-    var stars=[
+   var stars=[
         [1,2,3,4,5,6,]
         [5,6,7,8,9,10]
         [44,45,46.78,9]
@@ -207,41 +226,100 @@ $(document).ready(function(){
         var tableText:"";
         for(var i = 0; i<);
 
-        $("#btn1").on
+        $("#btn1").on*/
 
 // 배열하고 object들어가는거 보여줌
 // for을 이용해서표 만들기.       
-/*
-    var r =[];
-    var R =[];    
 
-
-    for(var i=0; i<6; i++){
-    for(var j=6; j>=0; j--){
-        console.log("배열 [" + i +"] [" + j + "] 의 값" + array[i][j]);
-    }
-}
-for(var i=0; i<6 ; i++){             
-      if(i==6){          
-        for(var j=6; j>=0 ;j--){   
-           r=[r[i]];
-        console.log(r);      
+for(var i=0; i<array.length; i++){         
+    for(var j=6; j>=0 ;j--){             
+        console.log(j);    
         }
-    }
-      else{
+    
         i.push
         console.log(i);
-      }   
-    r=[i];
-    R=[r];   
+         
     }      
+
+
+var car = {
+    name  : "크루즈", color : "black", size : "준중형", CC: "2000", price : "250,000,0000"
+}
+
+/*
+car.name ;
+car[name];
+
+car.name ="아반떼";
+car[name] = "아반Ep";
 */
+console.log(car.name);
+console.log(car);
+
+for(var obj in car){
+    console.log(car[obj]);
+}
+
+
+
+
+var array = [
+{manu : "싸이버거", 한회제공량 : "200", 칼로리 : "506", 
+나트륨 : "667(33)mg", 당류 : "3g", 포화지방:"6(40)g", 단백질 : "23(42)g", 
+세트중량 : "600g", 세트칼로리: "956g"},
+
+{manu : "인크레더블버거", 한회제공량 : "300", 칼로리 : "724", 
+나트륨 : "946(47)mg", 당류 : "10g", 포화지방:"10(67)g", 단백질 : "32(58)g", 
+세트중량 : "700g", 세트칼로리: "1174g"},
+
+{manu : "불싸이버거", 한회제공량 : "225", 칼로리 : "481", 
+나트륨 : "792(40)mg", 당류 : "11g", 포화지방:"4(27)g", 단백질 : "24(44)g", 
+세트중량 : "625g", 세트칼로리: "931g"}
+];
+
+console.log(array);
+
+var burger = [
+{manu : "싸이버거", 한회제공량 : "200", 칼로리 : "506", 
+나트륨 : "667(33)mg", 당류 : "3g", 포화지방:"6(40)g", 단백질 : "23(42)g", 
+세트중량 : "600g", 세트칼로리: "956g"},
+
+{manu : "인크레더블버거", 한회제공량 : "300", 칼로리 : "724", 
+나트륨 : "946(47)mg", 당류 : "10g", 포화지방:"10(67)g", 단백질 : "32(58)g", 
+세트중량 : "700g", 세트칼로리: "1174g"},
+
+{manu : "불싸이버거", 한회제공량 : "225", 칼로리 : "481", 
+나트륨 : "792(40)mg", 당류 : "11g", 포화지방:"4(27)g", 단백질 : "24(44)g", 
+세트중량 : "625g", 세트칼로리: "931g"}
+];
+
+/*
+for(var x in burger){
+    console.log(burger[x]);
+}
+for(var i =0 ; i<array.length; i++){
+    for(var x in array[i]){
+        console.log(array[i][x]); //배열안에 오브젝트가 들어가있는 거라는데
+    }
+}
+*/
+//문제 object생성하고, for문으로 만든걸 함수를 사용하여 만들어라.
+function manu(){
+    var ss = { s1 : "가나다", s2 : "라마바", s3 : "아자차"};
+            for(var x in ss){
+            console.log(ss[x]);        
+    }
+}
+manu();
 </script>
 <style>
     td, th{
     border: 1px solid black;
 }
    
+
+
+
 </style>
 </head>
 <body>
@@ -290,5 +368,8 @@ for(var i=0; i<6 ; i++){
         
     </table>
     <button id = "brn">클릭시 테이블 내용 추가</button>
+
+
+    
 </body>
 </html>

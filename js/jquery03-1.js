@@ -18,5 +18,17 @@ $(document).ready(function(){
 
     $("#div01 >p").eq(1).css(
         "background-color", "yellow");
-    
+   //eq사용시, index 번호는 0부터 시작 
+
+   $("#div04 >p"). filter("intro").css(
+    "background-color", "yellow");
+
+    $("#div04 >p"). filter("intro").css(
+    "background-color", "yellow");
+    //filter()은 지정한 조건을 선택
+    $("#div04 >p"). filter("intro").css(
+        "background-color", "yellow");
+        // not은 지정한 조건을 제외하고 선택
+    $("#div04 >p"). filter("intro").css(
+            "background-color", "yellow");
 });
